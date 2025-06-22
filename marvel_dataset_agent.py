@@ -17,7 +17,7 @@ def extract_character(question):
         name_tokens = set(re.findall(r"\b\w+\b", name_lower))
 
         if len(name_tokens & question_tokens) >= 2:
-            print(f"🔎 Matched: {name}")
+            print(f" Matched: {name}")
             return name
 
     return None
@@ -28,7 +28,7 @@ def build_csv_response(character_data):
     """
     row = character_data.iloc[0]
     return (
-        f"🦸 **{row['NAME']}** is a Marvel character.\n"
+        f" **{row['NAME']}** is a Marvel character.\n"
         f"- **Alignment:** {row.get('ALIGN', 'Unknown')}\n"
         f"- **Alive:** {row.get('ALIVE', 'Unknown')}\n"
         f"- **First Appearance:** {row.get('FIRST APPEARANCE', 'Unknown')}\n"
