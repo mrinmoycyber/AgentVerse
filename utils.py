@@ -1,45 +1,31 @@
-import requests
-from hf_token import HF_TOKEN
+import google.generativeai as genai
+from hf_token import GEMINI_API_KEY  
 
-API_URL = "https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta"
+genai.configure(api_key=GEMINI_API_KEY)
 
-headers = {
-    "Authorization": f"Bearer {HF_TOKEN}"
-}
+model = genai.GenerativeModel(
+    model_name="models/gemini-2.0-flash",
+    generation_config={
+        "temperature": 0.1,
+        "top_p": 1,
+        "top_k": 32,
+        "max_output_tokens": 150,
+    }
+)
 
 def call_llm(prompt: str):
-    """
-    Sends a prompt to the Hugging Face text generation model and extracts only the answer.
-    """
-    payload = {
-        "inputs": prompt,
-        "parameters": {
-            "max_new_tokens": 150,
-            "temperature": 0.1,
-        }
-    }
-
-    response = requests.post(API_URL, headers=headers, json=payload)
-
+    
     try:
-        result = response.json()
+        response = model.generate_content(prompt)
+        full_text = response.text
 
-        if isinstance(result, list):
-            full_text = result[0]["generated_text"]
-
-            # Return only the text after "Answer:" (if exists)
-            if "Answer:" in full_text:
-                return full_text.split("Answer:")[-1].strip()
-            else:
-                return full_text.strip()
-
-        elif isinstance(result, dict) and "error" in result:
-            return f"[LLM ERROR] {result['error']}"
+        # extract only the answer portion if "Answer:" is present
+        if "Answer:" in full_text:
+            return full_text.split("Answer:")[-1].strip()
         else:
-            return "[LLM ERROR] Unexpected format in model response."
-
+            return full_text.strip().replace("*", "")
     except Exception as e:
-        return f"[LLM ERROR] {str(e)}"
+        return f"[GEMINI ERROR] {str(e)}"
 
 def get_search_link(query, domain='marvel'):
     """
