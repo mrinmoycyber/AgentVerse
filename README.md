@@ -32,7 +32,7 @@ To run this project, ensure you have the following dependencies installed:
 You can install the required packages using pip:
 
 ```bash
-pip install streamlit google-generativeai python-dotenv
+pip install streamlit google-generativeai python-dotenv pandas
 ```
 ## Usage 🚀
 Clone the repository:
