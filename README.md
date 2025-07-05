@@ -49,5 +49,5 @@ GEMINI_API_KEY=your_api_key_here
 ```
 Run the Streamlit app:
 ```bash
-streamlit run app.py
+streamlit_app.py 
 ```
