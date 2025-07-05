@@ -1,5 +1,10 @@
 # AgentVerse
-A multi-agent streamlit app that answers Marvel and DC questions using intelligent routing and dataset-driven insights.
+
+## Project Goal 🎯
+This project is an AI Agnet-powered Streamlit web application designed to assist users with queries related to the Marvel and DC comic universes. At its core is a master agent that intelligently routes user questions to the appropriate domain-specific agent, either Marvel or DC, using a Gemini-based LLM classifier. Users can interact with the system in two modes: 
+(1) LLM-based assistant for dynamic reasoning and conversation
+(2) A dataset-driven mode where queries are answered using pre-curated information from structured Marvel and DC datasets. 
+The system employs modular agents to separate concerns cleanly. Gemini API integration ensures lightweight, fast response generation. This architecture allows scalable, accurate, and context-aware responses across both comic book domains.
 
 ## Project Structure 📁
 ```plaintext
