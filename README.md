@@ -10,7 +10,7 @@ A multi-agent streamlit app that answers Marvel and DC questions using intellige
 ├── utils.py                 # Shared utilities (e.g., LLM calls, search links)
 ├── .gitignore            
 ├── LICENSE                 
-├── README.md 
+└── README.md 
 ``` 
 
 ## Video Output 🎥
