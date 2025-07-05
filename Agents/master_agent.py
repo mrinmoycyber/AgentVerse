@@ -1,6 +1,6 @@
 import re
 from utils import call_llm, get_search_link
-import marvel_agent, dc_agent
+import Agents.marvel_agent as marvel_agent, dc_agent
 
 def detect_universe_llm(question: str) -> str:
     prompt = (

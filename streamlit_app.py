@@ -1,7 +1,7 @@
 import streamlit as st
-from master_agent import process_user_query
-from marvel_dataset_agent import answer_question as marvel_dataset_answer
-from dc_dataset_agent import answer_question as dc_dataset_answer
+from Agents.master_agent import process_user_query
+from Agents.marvel_dataset_agent import answer_question as marvel_dataset_answer
+from Agents.dc_dataset_agent import answer_question as dc_dataset_answer
 
 
 st.set_page_config(page_title="Marvel/DC AI Assistant", layout="centered")
