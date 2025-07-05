@@ -26,6 +26,7 @@ To run this project, ensure you have the following dependencies installed:
 
 - `streamlit`
 - `google-generativeai`
+- `pandas`
 - `python-dotenv`
 
 You can install the required packages using pip:
