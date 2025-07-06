@@ -25,6 +25,7 @@ This architecture allows scalable, accurate, and context-aware responses across 
 
 ## Video Output 🎥
 Watch the project demo here: 
+
 https://github.com/user-attachments/assets/1cf4324a-321e-4459-a99a-8940b422d536
 
 ## Requirements 📦
